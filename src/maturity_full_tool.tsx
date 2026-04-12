@@ -361,6 +361,9 @@ export default function App() {
           {isNascent ? (
             <div className="archetype-card">
               <div className="archetype-header">Your profile</div>
+              <div className="archetype-icon-container">
+                <span className="archetype-icon">{archetypeIconMap["Nascent"]}</span>
+              </div>
               <div className="text-2xl font-bold mb-2xl">Nascent — building the foundation</div>
               <div className="text-md">Your scores are uniformly low across all five factors. At this stage, no single archetype applies because no factor stands out as either a leverage point or a vulnerability. Every factor needs investment, but not equally.</div>
               <div className="achievement-box">

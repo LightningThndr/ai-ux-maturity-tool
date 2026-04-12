@@ -30,4 +30,5 @@ export const archetypeIconMap = {
   "The Principled but Unproven": <img src={principledButUnproven} alt="The Principled but Unproven" style={{width: '100%', height: '100%'}} />,
   "The Siloed Pioneer": <img src={siloedPioneer} alt="The Siloed Pioneer" style={{width: '100%', height: '100%'}} />,
   "The Balanced Profile": <img src={balancedProfile} alt="The Balanced Profile" style={{width: '100%', height: '100%'}} />,
+  "Nascent": <img src={nascent} alt="Nascent" style={{width: '100%', height: '100%'}} />,
 };
