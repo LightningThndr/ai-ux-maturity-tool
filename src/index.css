@@ -1,0 +1,265 @@
+:root {
+  /* Light mode - main colors */
+  --text: #000000;
+  --text-h: #000000;
+  --bg: #ffffff;
+  --border: #e5e4e7;
+  --code-bg: #f9f8f5;
+  
+  /* Color accent palette */
+  --accent-warm: #F3DB9B;
+  --accent-mint: #F3DB9B;
+  --accent-peach: #FFDAC5;
+  --accent-lavender: #F2CCFF;
+  --accent-blue: #BED0E8;
+  
+  /* Primary accent - using lavender */
+  --accent: #F2CCFF;
+  --accent-bg: rgba(242, 204, 255, 0.15);
+  --accent-border: rgba(242, 204, 255, 0.5);
+  
+  /* Secondary accents for variations */
+  --accent-secondary: #ACD6BC;
+  --accent-secondary-bg: rgba(172, 214, 188, 0.15);
+  --accent-tertiary: #F3DB9B;
+  --accent-tertiary-bg: rgba(243, 219, 155, 0.15);
+  
+  --social-bg: rgba(242, 204, 255, 0.08);
+  --shadow:
+    rgba(0, 0, 0, 0.06) 0 10px 15px -3px, rgba(0, 0, 0, 0.03) 0 4px 6px -2px;
+  --shadow-hover:
+    rgba(0, 0, 0, 0.1) 0 12px 20px -4px, rgba(0, 0, 0, 0.05) 0 6px 8px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Inter', sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  /* CSS variables for MaturityFullTool component */
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-text-tertiary: #333333;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f9f8f5;
+  --color-border-primary: #e5e4e7;
+  --color-border-secondary: #e5e4e7;
+  --color-border-tertiary: #e5e4e7;
+  --border-radius-lg: 12px;
+  --border-radius-md: 8px;
+
+  font: 16px/160% var(--sans);
+  letter-spacing: 0.16px;
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 15px;
+    letter-spacing: 0.15px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 14px;
+    letter-spacing: 0.14px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  @media (max-width: 1024px) {
+    border-inline: none;
+  }
+
+  @media (max-width: 640px) {
+    border-inline: none;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading);
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+/* Typography Hierarchy */
+h1 {
+  font-size: 58px;
+  line-height: 120%;
+  letter-spacing: -1.74px;
+  margin: 32px 0;
+  font-weight: 500;
+  color: #666666;
+  font-family: playfair display, serif;
+
+  @media (max-width: 1024px) {
+    font-size: 44px;
+    letter-spacing: -1.32px;
+    margin: 24px 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 38px;
+    letter-spacing: -1.14px;
+    margin: 20px 0;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 30px;
+    letter-spacing: -0.9px;
+    margin: 16px 0;
+  }
+}
+
+h2 {
+  font-size: 34px;
+  line-height: 120%;
+  letter-spacing: -1.02px;
+  margin: 0 0 16px;
+  font-weight: 600;
+
+  @media (max-width: 1024px) {
+    font-size: 28px;
+    letter-spacing: -0.84px;
+    margin: 0 0 12px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    letter-spacing: -0.72px;
+    margin: 0 0 10px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    margin: 0 0 8px;
+  }
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 130%;
+  letter-spacing: -0.22px;
+  margin: 16px 0 8px;
+  font-weight: 600;
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 18px;
+    margin: 12px 0 6px;
+  }
+}
+
+p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 160%;
+
+  @media (max-width: 640px) {
+    font-size: 16px;
+    line-height: 155%;
+  }
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 16px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* MaturityFullTool styling */
+div[style*="fontFamily"] {
+  font-family: var(--heading) !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Apply Playfair to larger text elements */
+div[style*="fontSize: 13"], 
+div[style*="fontSize: 14"], 
+div[style*="fontSize: 15"],
+div[style*="fontSize: 16"],
+div[style*="fontSize: 18"],
+div[style*="fontSize: 20"],
+div[style*="fontWeight: 5"],
+div[style*="fontWeight: 6"],
+div[style*="fontWeight: 7"] {
+  font-family: var(--heading) !important;
+}
+
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: var(--heading) !important;
+}
+
+button:hover:not(:disabled) {
+  box-shadow: var(--shadow-hover) !important;
+  background: var(--accent-mint) !important;
+  transform: translateY(-2px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--shadow) !important;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--accent-blue) !important;
+  outline-offset: 2px;
+}
+
+/* Apply accent colors to specific elements */
+div[style*="color: var(--accent"]  {
+  color: var(--accent) !important;
+}
+
+/* Light background for cards/sections */
+div[style*="background: var(--color-background-secondary"] {
+  background: var(--color-background-secondary) !important;
+  border: 1px solid var(--color-border-tertiary) !important;
+}
+
+/* Accent mint highlights */
+div[style*="background-color: var(--accent-mint"] {
+  background-color: var(--accent-mint) !important;
+}
+
+/* Ensure text contrast on light backgrounds */
+div[style*="color: var(--color-text"] {
+  color: var(--color-text-primary) !important;
+}
