@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./maturity_full_tool.css";
+import { archetypeIconMap } from "./assets/icons/archetype-icons";
 
 // ── DATA ──────────────────────────────────────────────────────────────────
 
@@ -377,8 +378,10 @@ export default function App() {
           ) : (
             <div className="archetype-card">
               <div className="archetype-header">Your archetype</div>
+              <div className="archetype-icon-container">
+                <span className="archetype-icon">{archetypeIconMap[archetype.name]}</span>
+              </div>
               <div className="archetype-details">
-                <span className="archetype-icon">{archetype.icon}</span>
                 <div>
                   <div className="archetype-name">{archetype.name}</div>
                   <div className="archetype-tension">{archetype.tension}</div>
@@ -439,7 +442,7 @@ export default function App() {
             </div>
             <div className="context-item" >
               <div className="text-xs uppercase">Archetype</div>
-              <div className="context-value">{isNascent?"Nascent — all factors low":archetype.icon+" "+archetype.name}</div>
+              <div className="context-value">{isNascent?"Nascent — all factors low":archetype.name}</div>
             </div>
             <div className="context-item" >
               <div className="context-label">Priority gap</div>

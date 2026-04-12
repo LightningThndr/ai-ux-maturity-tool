@@ -1,0 +1,33 @@
+// Archetype Icon Image Mapping
+import invisibleExpert from './archetypes/01-invisible-expert.png';
+import compliantBuilder from './archetypes/02-compliant-builder.png';
+import advocateWithoutInfrastructure from './archetypes/03-advocate-without-infrastructure.png';
+import metricDrivenOptimizer from './archetypes/04-metric-driven-optimizer.png';
+import seatWithoutSkills from './archetypes/05-seat-without-skills.png';
+import influentialButUnguarded from './archetypes/06-influential-but-unguarded.png';
+import informedButUnchanged from './archetypes/07-informed-but-unchanged.png';
+import fluentButUnaccountable from './archetypes/08-fluent-but-unaccountable.png';
+import confidentMeasurer from './archetypes/09-confident-measurer.png';
+import analystWithoutPlatform from './archetypes/10-analyst-without-platform.png';
+import ethicalVoiceUnheard from './archetypes/11-ethical-voice-unheard.png';
+import principledButUnproven from './archetypes/12-principled-but-unproven.png';
+import siloedPioneer from './archetypes/13-siloed-pioneer.png';
+import balancedProfile from './archetypes/14-balanced-profile.png';
+import nascent from './archetypes/15-nascent.png';
+
+export const archetypeIconMap = {
+  "The Invisible Expert": <img src={invisibleExpert} alt="The Invisible Expert" style={{width: '100%', height: '100%'}} />,
+  "The Compliant Builder": <img src={compliantBuilder} alt="The Compliant Builder" style={{width: '100%', height: '100%'}} />,
+  "The Advocate Without Infrastructure": <img src={advocateWithoutInfrastructure} alt="The Advocate Without Infrastructure" style={{width: '100%', height: '100%'}} />,
+  "The Metric-Driven Optimizer": <img src={metricDrivenOptimizer} alt="The Metric-Driven Optimizer" style={{width: '100%', height: '100%'}} />,
+  "The Seat Without the Skills": <img src={seatWithoutSkills} alt="The Seat Without the Skills" style={{width: '100%', height: '100%'}} />,
+  "The Influential but Unguarded": <img src={influentialButUnguarded} alt="The Influential but Unguarded" style={{width: '100%', height: '100%'}} />,
+  "The Informed but Unchanged": <img src={informedButUnchanged} alt="The Informed but Unchanged" style={{width: '100%', height: '100%'}} />,
+  "The Fluent but Unaccountable": <img src={fluentButUnaccountable} alt="The Fluent but Unaccountable" style={{width: '100%', height: '100%'}} />,
+  "The Confident Measurer": <img src={confidentMeasurer} alt="The Confident Measurer" style={{width: '100%', height: '100%'}} />,
+  "The Analyst Without a Platform": <img src={analystWithoutPlatform} alt="The Analyst Without a Platform" style={{width: '100%', height: '100%'}} />,
+  "The Ethical Voice Unheard": <img src={ethicalVoiceUnheard} alt="The Ethical Voice Unheard" style={{width: '100%', height: '100%'}} />,
+  "The Principled but Unproven": <img src={principledButUnproven} alt="The Principled but Unproven" style={{width: '100%', height: '100%'}} />,
+  "The Siloed Pioneer": <img src={siloedPioneer} alt="The Siloed Pioneer" style={{width: '100%', height: '100%'}} />,
+  "The Balanced Profile": <img src={balancedProfile} alt="The Balanced Profile" style={{width: '100%', height: '100%'}} />,
+};

@@ -662,15 +662,38 @@
   margin-bottom: 6px;
 }
 
+.archetype-icon-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+  min-height: 120px;
+}
+
 .archetype-icon {
-  font-size: 32px;
+  width: 150px;
+  height: 115px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.archetype-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .archetype-details {
-  gap: 10px;
+  gap: 0;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .archetype-name {
