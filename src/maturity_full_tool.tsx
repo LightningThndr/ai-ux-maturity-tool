@@ -80,16 +80,16 @@ const PYRAMID_LAYERS = [
          stretch:{name:"Speculative design for AI",desc:"Use design fiction, provocative prototyping, and what-if scenarios to make visible the societal consequences of AI design decisions before they scale. The goal is to surface unknown unknowns before they become unrecoverable ones."}}
     },
     societalSkills:[
-      {category:"Creativity amplification", icon:"✦",
+      {category:<span class="skill-name text-center">👉 Creativity amplification</span>,
        desc:"In the AI era, creativity is a defining human advantage. At the societal level, UX practitioners apply problem solving and creativity skills in a manner that influences new ideas and best patterns that scale. New and original ideas that come from thinking outside-the-box via imagination, originality, and expressiveness, enable innovation. Apply divergent ideation, conceptual bridging, metaphorical thinking, storytelling, visual problem-solving, and tastemaking (the act of developing and applying vision and intuition to make a product desirable and memorable, rather than just functional).",
        ref:"Grounded in the Creativity Amplification Framework: AI + Execution = Efficiency, but Humans + Imagination = Innovation."},
-      {category:"Designing for unknown unknowns", icon:"◌",
+      {category:<span class="skill-name text-center">👉 Designing for unknown unknowns</span>,
        desc:"The Rumsfeld Matrix identifies unknown unknowns — things we are not aware of and do not understand — as both the domain of greatest AI risk and the space where genuine innovation lives. UX practitioners develop Anti-Problem Definition, Assumption Reversal, cross-domain pattern transfer, and cultural signal detection to systematically surface what AI cannot, because AI can only recombine what it has been trained on.",
        ref:"Grounded in Angela Pesta's UX Salon Barcelona (Sept 2025): designers explore frontiers AI can only navigate once those frontiers are mapped."},
-      {category:"Human flourishing metrics", icon:"◎",
+      {category:<span class="skill-name text-center">👉 Human flourishing metrics</span>,
        desc:"Design measurement frameworks that track whether AI products contribute to human flourishing at population scale — drawing on self-determination theory (autonomy, competence, relatedness), digital wellbeing research, and the MIT Media Lab AHA program framework for assessing AI impact on wisdom, wonder, and wellbeing. Move beyond user satisfaction toward societal health indicators: democratic participation, equity, mental health, and human capability development.",
        ref:"Grounded in MIT MAS.S64 'Designing AI for Human Flourishing' and the 2025 Psychology of Technology Conference on purpose-driven AI."},
-      {category:"Public interest AI advocacy", icon:"◈",
+      {category:<span class="skill-name text-center">👉 Public interest AI advocacy</span>,
        desc:"Participate in standards bodies, regulatory consultations, and public discourse to shape the rules governing AI design, not just follow them. Treat AI literacy as a public good and design programs that improve societal understanding of AI systems, their capabilities, and their limits.",
        ref:"Grounded in the argument that UX leaders are catalysts for a society that flourishes in the AI era — requiring operation at the intersection of design, governance, and civic responsibility."}
     ]
@@ -368,14 +368,14 @@ export default function App() {
             <div className="archetype-card">
               <div className="archetype-header">Your profile</div>
               <div className="text-2xl font-bold mb-2xl">Nascent — building the foundation</div>
-              <div className="text-md" style={{color:"#cbd5e1",lineHeight:1.7,marginBottom:14}}>Your scores are uniformly low across all five factors. At this stage, no single archetype applies because no factor stands out as either a leverage point or a vulnerability. Every factor needs investment, but not equally.</div>
+              <div className="text-md">Your scores are uniformly low across all five factors. At this stage, no single archetype applies because no factor stands out as either a leverage point or a vulnerability. Every factor needs investment, but not equally.</div>
               <div className="achievement-box">
                 <div className="achievement-label">Where to start</div>
                 <div className="achievement-content">Focus on <strong>AI-UX Strategy</strong> and <strong>AI-Native Process</strong> first — they carry the highest weights (25% each) and act as multipliers for everything else.</div>
               </div>
               <div style={{background:"rgba(255,255,255,0.06)",borderRadius:8,padding:12}}>
-                <div className="text-xs font-bold uppercase" style={{color:"#94a3b8",marginBottom:4}}>First move</div>
-                <div className="text-md" style={{color:"#e2e8f0",lineHeight:1.6}}>Identify one upcoming AI product decision where UX could have been involved earlier. Make a specific, concrete case for inclusion. One upstream win begins the pattern.</div>
+                <div className="achievement-label">First move</div>
+                <div className="text-md" s>Identify one upcoming AI product decision where UX could have been involved earlier. Make a specific, concrete case for inclusion. One upstream win begins the pattern.</div>
               </div>
             </div>
           ) : (
@@ -399,9 +399,9 @@ export default function App() {
                   <div className="archetype-box-title">Core tension</div>
                   <div className="archetype-box-content italic">" {archetype.tension}"</div>
                 </div>
-                <div className="archetype-box archetype-box-accent">
-                  <div className="archetype-box-title archetype-box-title-accent">First move</div>
-                  <div className="archetype-box-content">{archetype.move}</div>
+                <div className="archetype-content">
+                  <div className="archetype-box-title">First move</div>
+                  <div className="archetype-box-content italic">{archetype.move}</div>
                 </div>
               </div>
             </div>

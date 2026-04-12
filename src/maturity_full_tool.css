@@ -379,7 +379,7 @@
 }
 
 .section-header {
-  background: var(--color-background-secondary);
+  background: #BED0E8;
   padding: 12px 16px;
   display: flex;
   justify-content: space-between;
@@ -500,11 +500,10 @@
 }
 
 .radar-label {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 700;
   color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.07em;
   margin-bottom: 8px;
 }
 
@@ -538,10 +537,9 @@
 }
 
 .level-header {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
   margin-bottom: 6px;
 }
 
@@ -724,9 +722,10 @@
 }
 
 .archetype-box-title {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
+  color: #000000;
   margin-bottom: 4px;
 }
 
@@ -966,24 +965,20 @@
 
 /* ── ACHIEVEMENT BOXES ── */
 .achievement-box {
-  padding: 12px 14px;
-  background: rgba(83, 74, 183, 0.2);
-  border-radius: var(--border-radius-md);
-  border: 0.5px solid rgba(83, 74, 183, 0.4);
-  margin-bottom: 10px;
+  margin: 15px 0 10px 0;
 }
 
 .achievement-label {
-  font-size: 11px;
-  font-weight: 500;
-  color: #93a1f0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000000;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
 
 .achievement-content {
   font-size: 13px;
-  color: #e2e8f0;
+  color: #000000;
   line-height: 1.7;
 }
 
