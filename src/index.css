@@ -227,10 +227,13 @@ button {
   font-family: var(--heading) !important;
 }
 
-button:hover:not(:disabled) {
-  box-shadow: var(--shadow-hover) !important;
-  background: var(--accent-mint) !important;
-  transform: translateY(-2px);
+/* Hover only on devices that truly hover, so taps don't leave a sticky highlight */
+@media (hover: hover) {
+  button:hover:not(:disabled) {
+    box-shadow: var(--shadow-hover) !important;
+    background: var(--accent-mint) !important;
+    transform: translateY(-2px);
+  }
 }
 
 button:active:not(:disabled) {

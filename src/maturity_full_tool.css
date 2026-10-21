@@ -4,7 +4,9 @@
 .maturity-container {
   font-family: var(--heading);
   padding: 1rem 0 2rem;
+  width: 100%;
   max-width: 740px;
+  box-sizing: border-box;
   margin: 0 auto;
   color: var(--color-text-primary);
 }
@@ -1491,18 +1493,6 @@
   cursor: pointer;
 }
 
-.note-input {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px 12px;
-  border-radius: var(--border-radius-md);
-  border: 1px solid var(--color-border-tertiary);
-  background: var(--color-background-primary);
-  color: var(--color-text-primary);
-  font: inherit;
-  font-size: 14px;
-  resize: vertical;
-}
 
 .page-nav {
   display: flex;
@@ -1544,4 +1534,146 @@
 .unsure-row,
 .evidence-row {
   text-align: left;
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 0.5px solid var(--color-border-tertiary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-footer-text {
+  margin: 0;
+  max-width: 560px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.site-footer-text a {
+  color: inherit;
+}
+
+.site-footer-logo img {
+  display: block;
+  width: 160px;
+  height: auto;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .maturity-container {
+    padding: 12px 16px 28px;
+  }
+
+  .step-nav-button {
+    font-size: 13px;
+    padding: 8px 2px;
+  }
+
+  .page-progress {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .factor-page-name {
+    font-size: 20px;
+  }
+
+  .intro-title {
+    font-size: 19px;
+  }
+
+  .intro-card,
+  .question-card,
+  .archetype-card {
+    padding: 14px;
+  }
+
+  .question-headline {
+    font-size: 16px;
+  }
+
+  .question-probes {
+    padding-left: 18px;
+  }
+
+  .level-option,
+  .role-option {
+    padding: 11px 12px;
+    gap: 10px;
+  }
+
+  .unsure-row {
+    align-items: flex-start;
+  }
+
+  .unsure-row input {
+    margin-top: 3px;
+  }
+
+  .page-nav .btn-secondary {
+    flex-basis: 34%;
+  }
+
+  .btn-primary {
+    font-size: 16px;
+  }
+
+  .results-grid,
+  .level-calc-section,
+  .grid-item {
+    flex-basis: 100%;
+  }
+
+  .calc-row {
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .calc-value {
+    white-space: nowrap;
+  }
+
+  .skills-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .skill-item,
+  .track-section,
+  .pyramid-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .pyramid-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pyramid-tab {
+    flex: 0 0 auto;
+    padding: 10px 12px;
+    white-space: nowrap;
+  }
+
+  .context-item {
+    flex-basis: 100%;
+  }
+
+  .archetype-name {
+    font-size: 18px;
+  }
+
+  .site-footer-logo img {
+    width: 140px;
+  }
 }

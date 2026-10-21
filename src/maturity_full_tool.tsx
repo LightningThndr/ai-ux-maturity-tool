@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./maturity_full_tool.css";
 import { archetypeIconMap } from "./assets/icons/archetype-icons";
+import futureUxLogo from "./assets/futureux-logo.png";
 import {
   FACTORS, LEVELS, ROLES, PRODUCT_LAYER, SOCIETY_LAYER, ARCHETYPES, NASCENT_HARD, NASCENT_SOFT,
   type Archetype, type Factor, type FactorId, type LayerId, type Skill,
@@ -77,13 +78,11 @@ interface FactorPageProps {
   index: number;
   value?: number;
   unsure: boolean;
-  note: string;
   onScore: (v: number) => void;
   onUnsure: (v: boolean) => void;
-  onNote: (v: string) => void;
 }
 
-function FactorPage({factor:f, index, value, unsure, note, onScore, onUnsure, onNote}: FactorPageProps) {
+function FactorPage({factor:f, index, value, unsure, onScore, onUnsure}: FactorPageProps) {
   return (
     <div className="factor-page">
       <div className="factor-page-header" style={{borderLeftColor:f.color}}>
@@ -133,12 +132,6 @@ function FactorPage({factor:f, index, value, unsure, note, onScore, onUnsure, on
           <span>I'm not sure. This is my best guess from where I sit.</span>
         </label>
       </div>
-
-      <div>
-        <label className="options-label" htmlFor={"note-"+f.id}>Give one example <span className="optional-tag">(optional)</span></label>
-        <textarea id={"note-"+f.id} className="note-input" rows={3} value={note} onChange={e=>onNote(e.target.value)}
-          placeholder="A specific decision, feature, or moment that supports your answer."/>
-      </div>
     </div>
   );
 }
@@ -151,7 +144,6 @@ const STEP_LABELS = ["Assess","Results","Archetype","Skills"];
 export default function App() {
   const [scores,    setScores]    = useState<Scores>({});
   const [unsure,    setUnsure]    = useState<Partial<Record<FactorId, boolean>>>({});
-  const [notes,     setNotes]     = useState<Partial<Record<FactorId, string>>>({});
   const [role,      setRole]      = useState<string|null>(null);
   const [step,      setStep]      = useState("assess");
   const [page,      setPage]      = useState(0); // 0 = intro, 1..5 = factor pages
@@ -169,9 +161,8 @@ export default function App() {
   const isNascent   = archetype==="nascent";
   const roleMeta    = ROLES.find(r=>r.id===role);
   const unsureF     = FACTORS.filter(f=>unsure[f.id]);
-  const notedF      = FACTORS.filter(f=>notes[f.id]?.trim());
 
-  const reset = ()=>{setScores({});setUnsure({});setNotes({});setRole(null);setStep("assess");setPage(0);setSkillTab("hard");setLayer("self");};
+  const reset = ()=>{setScores({});setUnsure({});setRole(null);setStep("assess");setPage(0);setSkillTab("hard");setLayer("self");};
   const canNav = (s: string) => s==="assess"||(allScored&&["results","archetype","skills"].includes(s));
   const goTo = (s: string) => { setStep(s); window.scrollTo?.(0,0); };
   const goPage = (p: number) => { setPage(p); window.scrollTo?.(0,0); };
@@ -266,10 +257,9 @@ export default function App() {
           {currentFactor && (
             <>
               <FactorPage factor={currentFactor} index={page-1}
-                value={scores[currentFactor.id]} unsure={!!unsure[currentFactor.id]} note={notes[currentFactor.id]??""}
+                value={scores[currentFactor.id]} unsure={!!unsure[currentFactor.id]}
                 onScore={v=>setScores(s=>({...s,[currentFactor.id]:v}))}
-                onUnsure={v=>setUnsure(s=>({...s,[currentFactor.id]:v}))}
-                onNote={v=>setNotes(s=>({...s,[currentFactor.id]:v}))}/>
+                onUnsure={v=>setUnsure(s=>({...s,[currentFactor.id]:v}))}/>
               <div className="page-nav">
                 <button onClick={()=>goPage(page-1)} className="btn-secondary">← Back</button>
                 {page<FACTORS.length ? (
@@ -349,16 +339,13 @@ export default function App() {
             </div>
           )}
           {/* Confidence & evidence */}
-          {(roleMeta || unsureF.length>0 || notedF.length>0) && (
+          {(roleMeta || unsureF.length>0) && (
             <div className="calc-table">
-              <div className="calc-header">Confidence & evidence</div>
+              <div className="calc-header">Confidence</div>
               {roleMeta && <div className="evidence-row">Answered as: <strong>{roleMeta.label}</strong></div>}
               {unsureF.length>0 && (
                 <div className="evidence-row">Marked “not sure”: <strong>{unsureF.map(f=>f.name).join(", ")}</strong>. Check these with colleagues in other roles before acting on them.</div>
               )}
-              {notedF.map(f=>(
-                <div key={f.id} className="evidence-row"><span className="calc-dot" style={{background:f.color}}></span><strong>{f.name}:</strong> {notes[f.id]}</div>
-              ))}
             </div>
           )}
           <button onClick={()=>goTo("archetype")} className="btn-primary">
@@ -630,6 +617,13 @@ export default function App() {
           </button>
         </div>
       )}
+
+      <footer className="site-footer">
+        <p className="site-footer-text">© 2026 Angela Pesta · FutureUX · <a href="https://futureux.org" target="_blank" rel="noopener noreferrer">futureux.org</a> · all rights reserved · Personal and internal organizational use permitted with attribution. Other uses require permission.</p>
+        <a href="https://futureux.org" target="_blank" rel="noopener noreferrer" className="site-footer-logo">
+          <img src={futureUxLogo} alt="FutureUX" width={369} height={62}/>
+        </a>
+      </footer>
     </div>
   );
 }
