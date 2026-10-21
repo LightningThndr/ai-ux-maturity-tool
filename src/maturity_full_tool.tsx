@@ -44,10 +44,13 @@ function getPriorityFactor(scores: Scores) {
 }
 function getArchetype(scores: Scores): Archetype | "nascent" {
   const composite = getComposite(scores);
-  const ids = FACTORS.map(f=>f.id);
-  const maxF = ids.reduce((a,b)=>score(scores,a)>=score(scores,b)?a:b);
-  const minF = ids.reduce((a,b)=>score(scores,a)<=score(scores,b)?a:b);
-  const gap = score(scores,maxF)-score(scores,minF);
+  const ids  = FACTORS.map(f=>f.id);
+  const vals = ids.map(id=>score(scores,id));
+  const max = Math.max(...vals), min = Math.min(...vals);
+  // Every factor tied for highest/lowest counts, so list order never decides the archetype
+  const highs = ids.filter(id=>score(scores,id)===max);
+  const lows  = ids.filter(id=>score(scores,id)===min);
+  const gap = max-min;
   const highCount = ids.filter(id=>score(scores,id)>=3.5).length;
   const lowCount  = ids.filter(id=>score(scores,id)<=2.5).length;
   const siloed   = ARCHETYPES.find(a=>a.isSiloed)!;
@@ -56,10 +59,18 @@ function getArchetype(scores: Scores): Archetype | "nascent" {
   if (composite <= 1.74 && gap < 1.5) return "nascent";
   if (highCount===1 && lowCount>=3)    return siloed;
   if (gap < 1.5)                       return balanced;
-  return paired.find(a=>a.high===maxF&&a.low===minF)
-    || paired.find(a=>a.high===maxF)
-    || paired.find(a=>a.low===minF)
-    || balanced;
+  const weight = (id?: FactorId) => FACTORS.find(f=>f.id===id)?.weight ?? 0;
+  // Among ties, the heavier low factor matters most (it drives the priority gap)
+  const rank = (a: Archetype) => weight(a.low)*10 + weight(a.high);
+  const byRank = (a: Archetype, b: Archetype) => rank(b)-rank(a);
+  const exact = paired.filter(a=>highs.includes(a.high!)&&lows.includes(a.low!)).sort(byRank)[0];
+  if (exact) return exact;
+  // No exact pair: match the real gap first, then the real strength
+  const byLow = paired.filter(a=>lows.includes(a.low!))
+    .sort((a,b)=>score(scores,b.high!)-score(scores,a.high!) || byRank(a,b))[0];
+  if (byLow) return byLow;
+  // Low Literacy has no archetype of its own yet; fall back on the strength
+  return paired.filter(a=>highs.includes(a.high!)).sort(byRank)[0] || balanced;
 }
 
 function RadarChart({scores}: {scores: Scores}) {

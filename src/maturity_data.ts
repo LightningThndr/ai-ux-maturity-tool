@@ -293,7 +293,7 @@ export const FACTORS: Factor[] = [
 ];
 
 export const LEVELS = [
-  {level:1,label:"Ad hoc / Reactive",          headline:"AI is someone else's problem."},
+  {level:1,label:"Absent / Reactive",          headline:"AI is someone else's problem."},
   {level:2,label:"Developing / Aware",         headline:"We know AI is different. We're starting to adjust."},
   {level:3,label:"Emerging / Structured",      headline:"We have methods for this. We're building shared ownership."},
   {level:4,label:"Integrated / Holistic",      headline:"Human-centred AI is how we work, not a project name."},
