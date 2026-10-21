@@ -54,7 +54,11 @@ function getArchetype(scores: Scores): Archetype | "nascent" {
   const highCount = ids.filter(id=>score(scores,id)>=3.5).length;
   const lowCount  = ids.filter(id=>score(scores,id)<=2.5).length;
   const siloed   = ARCHETYPES.find(a=>a.isSiloed)!;
-  const balanced = ARCHETYPES.find(a=>a.isBalanced)!;
+  // Balanced splits by level: the Leader version applies from its minLevel up
+  const level    = getLevelMeta(composite).level;
+  const balanced = ARCHETYPES.filter(a=>a.isBalanced)
+    .sort((a,b)=>(b.minLevel??0)-(a.minLevel??0))
+    .find(a=>level>=(a.minLevel??0))!;
   const paired   = ARCHETYPES.filter(a=>!a.isSiloed&&!a.isBalanced);
   if (composite <= 1.74 && gap < 1.5) return "nascent";
   if (highCount===1 && lowCount>=3)    return siloed;
@@ -69,7 +73,6 @@ function getArchetype(scores: Scores): Archetype | "nascent" {
   const byLow = paired.filter(a=>lows.includes(a.low!))
     .sort((a,b)=>score(scores,b.high!)-score(scores,a.high!) || byRank(a,b))[0];
   if (byLow) return byLow;
-  // Low Literacy has no archetype of its own yet; fall back on the strength
   return paired.filter(a=>highs.includes(a.high!)).sort(byRank)[0] || balanced;
 }
 
@@ -462,9 +465,9 @@ export default function App() {
               </div>
               <h1 className="archetype-name">{archetype.name}</h1>
               <p className="archetype-tension">{archetype.tension}</p>
-              {archetype.high && archetype.low && (
+              {archetype.low && (
                 <div className="archetype-tags">
-                  <span className="tag">High · {FACTORS.find(f=>f.id===archetype.high)?.name}</span>
+                  {archetype.high && <span className="tag">High · {FACTORS.find(f=>f.id===archetype.high)?.name}</span>}
                   <span className="tag tag-muted">Low · {FACTORS.find(f=>f.id===archetype.low)?.name}</span>
                 </div>
               )}
