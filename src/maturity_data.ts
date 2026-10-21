@@ -39,7 +39,7 @@ export interface Archetype {
 // ── FACTORS ───────────────────────────────────────────────────────────────
 
 export const FACTORS: Factor[] = [
-  { id:"strategy", name:"AI-UX Strategy", short:"Strategy", weight:0.20, color:"#8d246f", bg:"#EEEDFE", textDark:"#26215C",
+  { id:"strategy", name:"AI-UX Strategy", short:"Strategy", weight:0.20, color:"#153C6A", bg:"rgba(21,60,106,0.08)", textDark:"#153C6A",
     subtext:"UX positioning, decision rights, and resourcing in AI product development.",
     question:{
       headline:"When your company makes an important AI product decision, how early is UX involved, and does it change the outcome?",
@@ -88,7 +88,7 @@ export const FACTORS: Factor[] = [
       }
     }
   },
-  { id:"process", name:"AI-Native Process", short:"Process", weight:0.25, color:"#0c7892", bg:"#E1F5EE", textDark:"#04342C",
+  { id:"process", name:"AI-Native Process", short:"Process", weight:0.25, color:"#3C97D4", bg:"rgba(60,151,212,0.10)", textDark:"#1D5F8C",
     subtext:"Research, design, and build methods suited to probabilistic, adaptive, and agentic systems.",
     question:{
       headline:"On your most recent AI feature, what did UX do differently because it was AI?",
@@ -139,7 +139,7 @@ export const FACTORS: Factor[] = [
       }
     }
   },
-  { id:"culture", name:"AI Literacy & Culture", short:"Literacy", weight:0.15, color:"#193182", bg:"#FAECE7", textDark:"#4A1B0C",
+  { id:"culture", name:"AI Literacy & Culture", short:"Literacy", weight:0.15, color:"#1E8B85", bg:"rgba(30,139,133,0.10)", textDark:"#145E5A",
     subtext:"Shared AI understanding across UX and its partners, and a culture that keeps learning as AI changes.",
     question:{
       headline:"Could your team explain why your AI gave a wrong answer, and do engineers ask for UX's view?",
@@ -188,7 +188,7 @@ export const FACTORS: Factor[] = [
       }
     }
   },
-  { id:"outcomes", name:"Outcomes & Measurement", short:"Outcomes", weight:0.20, color:"#5F5E5A", bg:"#F1EFE8", textDark:"#2C2C2A",
+  { id:"outcomes", name:"Outcomes & Measurement", short:"Outcomes", weight:0.20, color:"#4D6E8C", bg:"rgba(77,110,140,0.10)", textDark:"#2F4A63",
     subtext:"Measuring AI success beyond engagement: calibrated trust, output quality, user agency, and long-term wellbeing.",
     question:{
       headline:"How would you know if users trusted your AI too much, or too little?",
@@ -239,7 +239,7 @@ export const FACTORS: Factor[] = [
       }
     }
   },
-  { id:"trust", name:"Trust & Accountability", short:"Trust", weight:0.20, color:"#b06407", bg:"#FBEAF0", textDark:"#4B1528",
+  { id:"trust", name:"Trust & Accountability", short:"Trust", weight:0.20, color:"#2E9B6E", bg:"rgba(46,155,110,0.10)", textDark:"#1D6A4A",
     subtext:"Designing AI users can rightly rely on: honest, transparent, steerable, able to recover from mistakes, and on their side.",
     question:{
       headline:"When your AI gets something wrong, what happens for the user, and who designed that moment?",
@@ -293,11 +293,11 @@ export const FACTORS: Factor[] = [
 ];
 
 export const LEVELS = [
-  {level:1,label:"Ad hoc / Reactive",    headline:"AI is someone else's problem.",                               color:"#C0392B",bg:"#fdf3f2"},
-  {level:2,label:"Developing / Aware",   headline:"We know AI is different. We're starting to adjust.",          color:"#D46A1A",bg:"#fdf6ee"},
-  {level:3,label:"Emerging / Structured",headline:"We have methods for this. We're building shared ownership.", color:"#B5860D",bg:"#fdfbee"},
-  {level:4,label:"Integrated / Holistic",headline:"Human-centred AI is how we work, not a project name.",        color:"#1E7E4E",bg:"#f0fbf5"},
-  {level:5,label:"Transformative / Pioneering",headline:"We're creating the playbook others will follow.",       color:"#2558C8",bg:"#f0f4fd"}
+  {level:1,label:"Ad hoc / Reactive",          headline:"AI is someone else's problem."},
+  {level:2,label:"Developing / Aware",         headline:"We know AI is different. We're starting to adjust."},
+  {level:3,label:"Emerging / Structured",      headline:"We have methods for this. We're building shared ownership."},
+  {level:4,label:"Integrated / Holistic",      headline:"Human-centred AI is how we work, not a project name."},
+  {level:5,label:"Transformative / Pioneering",headline:"We're creating the playbook others will follow."}
 ];
 
 export const ROLES = [

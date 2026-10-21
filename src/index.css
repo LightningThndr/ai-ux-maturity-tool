@@ -1,268 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap');
+
+/* ════════════════════════════════════════════════════════════
+   FutureUX — Foundations tokens (canonical)
+   ════════════════════════════════════════════════════════════ */
 :root {
-  /* Light mode - main colors */
-  --text: #000000;
-  --text-h: #000000;
-  --bg: #ffffff;
-  --border: #e5e4e7;
-  --code-bg: #f9f8f5;
-  
-  /* Color accent palette */
-  --accent-warm: #F3DB9B;
-  --accent-mint: #F3DB9B;
-  --accent-peach: #FFDAC5;
-  --accent-lavender: #F2CCFF;
-  --accent-blue: #BED0E8;
-  
-  /* Primary accent - using lavender */
-  --accent: #F2CCFF;
-  --accent-bg: rgba(242, 204, 255, 0.15);
-  --accent-border: rgba(242, 204, 255, 0.5);
-  
-  /* Secondary accents for variations */
-  --accent-secondary: #ACD6BC;
-  --accent-secondary-bg: rgba(172, 214, 188, 0.15);
-  --accent-tertiary: #F3DB9B;
-  --accent-tertiary-bg: rgba(243, 219, 155, 0.15);
-  
-  --social-bg: rgba(242, 204, 255, 0.08);
-  --shadow:
-    rgba(0, 0, 0, 0.06) 0 10px 15px -3px, rgba(0, 0, 0, 0.03) 0 4px 6px -2px;
-  --shadow-hover:
-    rgba(0, 0, 0, 0.1) 0 12px 20px -4px, rgba(0, 0, 0, 0.05) 0 6px 8px -2px;
+  /* Color: Brand */
+  --navy:        #153C6A;
+  --blue:        #3C97D4;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: 'Inter', sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* Color: Opacity variants on --blue */
+  --blue-faint:  rgba(60,151,212,0.08);
+  --blue-dim:    rgba(60,151,212,0.20);
+  --blue-mid:    rgba(60,151,212,0.45);
 
-  /* CSS variables for MaturityFullTool component */
-  --color-text-primary: #000000;
-  --color-text-secondary: #333333;
-  --color-text-tertiary: #333333;
-  --color-background-primary: #ffffff;
-  --color-background-secondary: #f9f8f5;
-  --color-border-primary: #e5e4e7;
-  --color-border-secondary: #e5e4e7;
-  --color-border-tertiary: #e5e4e7;
-  --border-radius-lg: 12px;
-  --border-radius-md: 8px;
+  /* Color: Surfaces */
+  --bg:          #EEF4FA;
+  --bg-dark:     #060D16;
+  --white:       #ffffff;
 
-  font: 16px/160% var(--sans);
-  letter-spacing: 0.16px;
+  /* Color: Text */
+  --text:        #0D2035;
+  --muted:       #4D6E8C;
+
+  /* Status (from Components 01) */
+  --red:         #C8526B;
+  --red-faint:   rgba(200,82,107,0.10);
+
+  /* Spacing (8-pt grid) */
+  --s1:8px;  --s2:16px; --s3:24px; --s4:32px;
+  --s5:40px; --s6:48px; --s7:56px; --s8:64px;
+
+  /* Radii */
+  --r-btn:   24px;
+  --r-card:  16px;
+  --r-pill:  32px;
+  --r-sharp: 3px;
+
+  /* Fonts */
+  --f-display: 'Major Mono Display', monospace;
+  --f-mono:    'Space Mono', monospace;
+  --f-body:    'Exo 2', sans-serif;
+
+  /* Grid */
+  --dot-spacing: 30px;
+
+  /* Motion */
+  --ease-enter: cubic-bezier(0.16, 0.7, 0.3, 1);
+
+  /* Card depth */
+  --shadow-card: 0 4px 20px rgba(60,151,212,0.12);
+  --shadow-card-hover: 0 12px 32px rgba(60,151,212,0.20);
+
   color-scheme: light;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 15px;
-    letter-spacing: 0.15px;
-  }
-
-  @media (max-width: 640px) {
-    font-size: 14px;
-    letter-spacing: 0.14px;
-  }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  padding: 0;
+  font-family: var(--f-body);
+  font-weight: 300;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, rgba(60,151,212,0.18) 1px, transparent 1px);
+  background-size: var(--dot-spacing) var(--dot-spacing);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
+  overflow-x: clip; /* contains the full-bleed nav plate without breaking position: sticky */
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-
-  @media (max-width: 1024px) {
-    border-inline: none;
-  }
-
-  @media (max-width: 640px) {
-    border-inline: none;
-  }
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--heading);
-  font-weight: 600;
-  color: var(--text-h);
-}
+h1, h2, h3, p { margin: 0; }
 
-/* Typography Hierarchy */
-h1 {
-  font-size: 58px;
-  line-height: 120%;
-  letter-spacing: -1.74px;
-  margin: 32px 0;
-  font-weight: 500;
-  color: #666666;
-  font-family: playfair display, serif;
+button, input, textarea { font: inherit; color: inherit; }
 
-  @media (max-width: 1024px) {
-    font-size: 44px;
-    letter-spacing: -1.32px;
-    margin: 24px 0;
-  }
+strong { font-weight: 600; }
 
-  @media (max-width: 768px) {
-    font-size: 38px;
-    letter-spacing: -1.14px;
-    margin: 20px 0;
-  }
-
-  @media (max-width: 640px) {
-    font-size: 30px;
-    letter-spacing: -0.9px;
-    margin: 16px 0;
-  }
-}
-
-h2 {
-  font-size: 34px;
-  line-height: 120%;
-  letter-spacing: -1.02px;
-  margin: 0 0 16px;
-  font-weight: 600;
-
-  @media (max-width: 1024px) {
-    font-size: 28px;
-    letter-spacing: -0.84px;
-    margin: 0 0 12px;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 24px;
-    letter-spacing: -0.72px;
-    margin: 0 0 10px;
-  }
-
-  @media (max-width: 640px) {
-    font-size: 20px;
-    letter-spacing: -0.6px;
-    margin: 0 0 8px;
-  }
-}
-
-h3 {
-  font-size: 22px;
-  line-height: 130%;
-  letter-spacing: -0.22px;
-  margin: 16px 0 8px;
-  font-weight: 600;
-
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-
-  @media (max-width: 640px) {
-    font-size: 18px;
-    margin: 12px 0 6px;
-  }
-}
-
-p {
-  margin: 0;
-  font-size: 17px;
-  line-height: 160%;
-
-  @media (max-width: 640px) {
-    font-size: 16px;
-    line-height: 155%;
-  }
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 16px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-}
-
-/* MaturityFullTool styling */
-div[style*="fontFamily"] {
-  font-family: var(--heading) !important;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-/* Apply Playfair to larger text elements */
-div[style*="fontSize: 13"], 
-div[style*="fontSize: 14"], 
-div[style*="fontSize: 15"],
-div[style*="fontSize: 16"],
-div[style*="fontSize: 18"],
-div[style*="fontSize: 20"],
-div[style*="fontWeight: 5"],
-div[style*="fontWeight: 6"],
-div[style*="fontWeight: 7"] {
-  font-family: var(--heading) !important;
-}
-
-button {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: var(--heading) !important;
-}
-
-/* Hover only on devices that truly hover, so taps don't leave a sticky highlight */
-@media (hover: hover) {
-  button:hover:not(:disabled) {
-    box-shadow: var(--shadow-hover) !important;
-    background: var(--accent-mint) !important;
-    transform: translateY(-2px);
-  }
-}
-
-button:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: var(--shadow) !important;
-}
-
-button:focus-visible {
-  outline: 3px solid var(--accent-blue) !important;
+:focus-visible {
+  outline: 2px solid var(--blue-mid);
   outline-offset: 2px;
 }
 
-/* Apply accent colors to specific elements */
-div[style*="color: var(--accent"]  {
-  color: var(--accent) !important;
-}
-
-/* Light background for cards/sections */
-div[style*="background: var(--color-background-secondary"] {
-  background: var(--color-background-secondary) !important;
-  border: 1px solid var(--color-border-tertiary) !important;
-}
-
-/* Accent mint highlights */
-div[style*="background-color: var(--accent-mint"] {
-  background-color: var(--accent-mint) !important;
-}
-
-/* Ensure text contrast on light backgrounds */
-div[style*="color: var(--color-text"] {
-  color: var(--color-text-primary) !important;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
