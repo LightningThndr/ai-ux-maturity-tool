@@ -20,7 +20,7 @@ export const archetypeIconMap = {
   "The Compliant Builder": <img src={compliantBuilder} alt="The Compliant Builder" style={{width: '100%', height: '100%'}} />,
   "The Advocate Without Infrastructure": <img src={advocateWithoutInfrastructure} alt="The Advocate Without Infrastructure" style={{width: '100%', height: '100%'}} />,
   "The Metric-Driven Optimizer": <img src={metricDrivenOptimizer} alt="The Metric-Driven Optimizer" style={{width: '100%', height: '100%'}} />,
-  "The Seat Without the Skills": <img src={seatWithoutSkills} alt="The Seat Without the Skills" style={{width: '100%', height: '100%'}} />,
+  "The Seat at the Table": <img src={seatWithoutSkills} alt="The Seat at the Table" style={{width: '100%', height: '100%'}} />,
   "The Influential but Unguarded": <img src={influentialButUnguarded} alt="The Influential but Unguarded" style={{width: '100%', height: '100%'}} />,
   "The Informed but Unchanged": <img src={informedButUnchanged} alt="The Informed but Unchanged" style={{width: '100%', height: '100%'}} />,
   "The Fluent but Unaccountable": <img src={fluentButUnaccountable} alt="The Fluent but Unaccountable" style={{width: '100%', height: '100%'}} />,
