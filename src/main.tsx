@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import MaturityFullTool from './maturity_full_tool.tsx'
+import MaturityFullTool from './maturity_full_tool'
 
 const rootElement = document.getElementById('root')
 

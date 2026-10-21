@@ -1275,3 +1275,273 @@
 .calc-value {
   font-weight: 500;
 }
+
+/* ── ASSESSMENT PAGES ── */
+.page-progress {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.page-dot {
+  flex: 1 1 60px;
+  padding: 7px 4px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border-tertiary);
+  background: var(--color-background-primary);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.page-dot.active {
+  border-width: 2px;
+  border-color: var(--color-text-primary);
+}
+
+.intro-card,
+.question-card {
+  background: var(--color-background-secondary);
+  border-radius: var(--border-radius-lg);
+  border: 0.5px solid var(--color-border-tertiary);
+  padding: 18px;
+}
+
+.intro-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.intro-card p {
+  margin: 0 0 10px;
+}
+
+.factor-page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.factor-page-header {
+  border-left: 4px solid;
+  padding: 2px 0 2px 14px;
+}
+
+.factor-page-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 4px;
+}
+
+.factor-page-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.factor-page-subtext {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.question-headline {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.question-leadin {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.question-probes {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.subfactor-details {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 0.5px solid var(--color-border-tertiary);
+  font-size: 13px;
+}
+
+.subfactor-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.subfactor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.subfactor-name {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.options-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.optional-tag {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-text-tertiary);
+}
+
+.level-options,
+.role-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.level-option,
+.role-option {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: var(--border-radius-lg);
+  border: 1.5px solid var(--color-border-tertiary);
+  background: var(--color-background-primary);
+  color: var(--color-text-primary);
+  font: inherit;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.level-option:hover,
+.role-option:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.level-option-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.level-option-body,
+.role-option {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.level-option-label,
+.role-option-label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.level-option-text,
+.role-option-desc {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.role-option.selected {
+  border-color: #8C7394;
+  background: #f4eff6;
+}
+
+.unsure-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.note-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border-tertiary);
+  background: var(--color-background-primary);
+  color: var(--color-text-primary);
+  font: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.page-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.page-nav .btn-secondary {
+  flex: 0 0 30%;
+}
+
+.page-nav .btn-primary {
+  flex: 1;
+}
+
+.unsure-mark {
+  font-weight: 700;
+  color: #D46A1A;
+}
+
+.evidence-row {
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 6px 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
+.evidence-row:last-child {
+  border-bottom: none;
+}
+
+.archetype-glyph {
+  font-size: 72px;
+  line-height: 1;
+  color: #8C7394;
+}
+
+.factor-page,
+.intro-card,
+.unsure-row,
+.evidence-row {
+  text-align: left;
+}
